@@ -3,17 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SignUp Page</title>
+    <title>Product Details Page</title>
     <!-- style custom css link -->
     <link rel="stylesheet" href="style.css" />
     <!-- tailwind css -->
     <link href="./output.css" rel="stylesheet" />
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- font awesome  link -->
-    <script
-      src="https://kit.fontawesome.com/f07af11b35.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="../fontLink/css/all.min.css" />
+    <link rel="stylesheet" href="../fontLink/css/fontawesome.min.css" />
     <!-- daisy link  -->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
@@ -32,6 +30,13 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
       rel="stylesheet"
     />
+
+    <!-- swipper link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   </head>
   <body>
     <header>
@@ -254,256 +259,292 @@
       </div>
     </header>
 
-    <nav class="h-20 bg-[#ffad33] flex justify-between items-center">
-      <div class="bg-white px-28 py-3 font-semibold rounded-md ml-20">
-        <h5 class="text-black relative">
-          Categories
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 448 512"
-            class="absolute z-30 w-5 h-5 top-1 left-36"
-          >
-            <!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-            <path
-              d="M201.4 374.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 306.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"
-            />
-          </svg>
-        </h5>
-      </div>
-      <div class="flex items-center justify-between w-full px-4">
-        <div
-          class="relative flex items-center w-1/3 h-12 rounded-lg focus-within:shadow-lg bg-white overflow-hidden ml-20"
+    <nav class="bg-[#FFAD33] py-[5px] px-[15px]">
+      <ul
+        class="flex items-center text-base font-bold text-white gap-10 max-w-screen-xl mx-auto"
+      >
+        <li
+          class="flex items-center justify-between px-10 w-64 bg-white h-12 rounded-md"
         >
-          <div class="grid place-items-center h-full w-12 text-gray-300">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-              />
-            </svg>
-          </div>
-
-          <input
-            class="peer h-full w-full outline-none text-sm text-gray-700 pr-2"
-            type="text"
-            id="search"
-            placeholder="Search something.."
-          />
-        </div>
-        <ul class="flex ml-4 space-x-8 text-lg font-bold text-white">
-          <li class="inline-block">Brand</li>
-          <li class="inline-block">Discounted Products</li>
-          <li class="inline-block">All Vendors</li>
-        </ul>
-      </div>
-    </nav>
-    
-    <main class="container mx-auto mt-10">
-      <section>
-        <div class="font-[sans-serif] bg-white md:h-svh">
-          <div
-            class="grid grid-cols-1 md:grid-cols-2 items-center gap-8 h-full"
+          <svg
+            width="21"
+            height="21"
+            viewBox="0 0 21 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="text-black"
           >
-            <div class="max-md:order-1 p-4">
-              <img
-                src="../assets/signup.png"
-                class="w-full lg:max-w-[85%] h-full object-contain block mx-auto"
-                alt="login-image"
-              />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M9.875 12.9195C9.875 12.422 9.6775 11.9452 9.32563 11.5939C8.97438 11.242 8.4975 11.0445 8 11.0445C6.75875 11.0445 4.86625 11.0445 3.625 11.0445C3.1275 11.0445 2.65062 11.242 2.29937 11.5939C1.9475 11.9452 1.75 12.422 1.75 12.9195V17.2945C1.75 17.792 1.9475 18.2689 2.29937 18.6202C2.65062 18.972 3.1275 19.1695 3.625 19.1695H8C8.4975 19.1695 8.97438 18.972 9.32563 18.6202C9.6775 18.2689 9.875 17.792 9.875 17.2945V12.9195ZM19.25 12.9195C19.25 12.422 19.0525 11.9452 18.7006 11.5939C18.3494 11.242 17.8725 11.0445 17.375 11.0445C16.1337 11.0445 14.2413 11.0445 13 11.0445C12.5025 11.0445 12.0256 11.242 11.6744 11.5939C11.3225 11.9452 11.125 12.422 11.125 12.9195V17.2945C11.125 17.792 11.3225 18.2689 11.6744 18.6202C12.0256 18.972 12.5025 19.1695 13 19.1695H17.375C17.8725 19.1695 18.3494 18.972 18.7006 18.6202C19.0525 18.2689 19.25 17.792 19.25 17.2945V12.9195ZM16.5131 9.66516L19.1206 7.05766C19.8525 6.32578 19.8525 5.13828 19.1206 4.4064L16.5131 1.79891C15.7813 1.06703 14.5937 1.06703 13.8619 1.79891L11.2544 4.4064C10.5225 5.13828 10.5225 6.32578 11.2544 7.05766L13.8619 9.66516C14.5937 10.397 15.7813 10.397 16.5131 9.66516ZM9.875 3.54453C9.875 3.04703 9.6775 2.57015 9.32563 2.2189C8.97438 1.86703 8.4975 1.66953 8 1.66953C6.75875 1.66953 4.86625 1.66953 3.625 1.66953C3.1275 1.66953 2.65062 1.86703 2.29937 2.2189C1.9475 2.57015 1.75 3.04703 1.75 3.54453V7.91953C1.75 8.41703 1.9475 8.89391 2.29937 9.24516C2.65062 9.59703 3.1275 9.79453 3.625 9.79453H8C8.4975 9.79453 8.97438 9.59703 9.32563 9.24516C9.6775 8.89391 9.875 8.41703 9.875 7.91953V3.54453Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+          <span class="text-lg font-bold text-black">Category</span>
+          <i class="fa-solid fa-angle-down text-black"></i>
+        </li>
+        <div class="relative group">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-200">Home</a>
+          <ul
+            class="absolute hidden text-gray-700 pt-1 group-hover:block z-50 w-52"
+          >
+            <li class="">
+              <a
+                class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                href="#"
+                >Submenu 1</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                href="#"
+                >Submenu 2</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                href="#"
+                >Submenu 3</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <li><a href="">Brand</a></li>
+        <li><a href="">Discount Products</a></li>
+        <li><a href="">All Vendors</a></li>
+        <li><a href="">Vendor Zone</a></li>
+      </ul>
+    </nav>
+    <!-- banner section  -->
+    <div
+      class="max-w-screen-xl mx-auto flex items-center justify-between relative"
+    >
+      <div
+        class="bg-white rounded-md mt-2 w-1/5 left-0 h-[350px] scroll-container shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]"
+      >
+        <div
+          class="flex justify-between items-center hover:bg-gray-200 px-3 group cursor-pointer transition-all duration-500 ease-in-out"
+        >
+          <a href="#" class="block py-1 text-gray-700"
+            >Women’s & Girls’ Fashion</a
+          >
+          <i class="fa-solid fa-angle-right opacity-30"></i>
+
+          <ul
+            class="absolute left-64 top-0 hidden group-hover:flex flex-col text-black pt-1 w-44 h-[350px] group-hover:opacity-100 group-hover:visible z-50 bg-white transition-opacity duration-300 ease-in-out translate-x-1 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] mt-2"
+          >
+            <li class="">
+              <a
+                class="hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                href="#"
+                >Submenu 1</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                href="#"
+                >Submenu 2</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                href="#"
+                >Submenu 3</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="flex justify-between items-center hover:bg-gray-200 px-3">
+          <a href="#" class="block py-1 text-gray-700">Health & Beauty</a>
+          <i class="fa-solid fa-angle-right opacity-30"></i>
+        </div>
+        <!-- Repeat for other categories -->
+      </div>
+
+      <!-- banner section start -->
+      <!-- Swiper -->
+      <div class="swiper mySwiper3 w-4/5 ml-5 mt-2">
+        <div class="swiper-wrapper rounded-md">
+          <div class="swiper-slide h-[350px]">
+            <img
+              src="https://icms-image.slatic.net/images/ims-web/1a9cd971-0768-437d-9754-8ea411cb9ad8.jpg"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide h-[350px]">
+            <img
+              src="https://icms-image.slatic.net/images/ims-web/fd8a6963-36a8-4ac7-961d-fdc572416cd1.jpg"
+              alt=""
+            />
+          </div>
+          <div class="swiper-slide h-[350px]">
+            <img
+              src="https://icms-image.slatic.net/images/ims-web/c8130431-3d41-4aeb-8b47-518d19854ebb.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+      <!-- banner section end -->
+    </div>
+
+    <main class="max-w-screen-xl mx-auto mt-10">
+      <div class="bg-gray-100 py-8">
+        <div class="container mx-auto px-4">
+          <h1 class="text-2xl font-semibold mb-4">Shopping Cart</h1>
+          <div class="">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4">
+              <table class="w-full">
+                <thead>
+                  <tr>
+                    <th class="text-left font-semibold">Product</th>
+                    <th class="text-left font-semibold">Price</th>
+                    <th class="text-left font-semibold pl-8">Quantity</th>
+                    <th class="text-left font-semibold">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-4">
+                      <div class="flex items-center">
+                        <img
+                          class="h-16 w-16 mr-4"
+                          src="../assets/g27cq4-500x500 1.png"
+                          alt="Product image"
+                        />
+                        <span class="font-semibold">Product name</span>
+                      </div>
+                    </td>
+                    <td class="py-4">$19.99</td>
+                    <td class="py-4">
+                      <div class="flex items-center">
+                        <button class="border rounded-md py-2 px-4 mr-2">
+                          -
+                        </button>
+                        <span class="text-center w-8">1</span>
+                        <button class="border rounded-md py-2 px-4 ml-2">
+                          +
+                        </button>
+                      </div>
+                    </td>
+                    <td class="py-4">$19.99</td>
+                  </tr>
+                  <!-- More product rows -->
+                </tbody>
+              </table>
             </div>
+          </div>
+          <div class="">
+            <div class="bg-white rounded-lg shadow-md p-6 mb-4">
+              <table class="w-full">
+                <thead>
+                  <tr>
+                    <th class="text-left font-semibold">Product</th>
+                    <th class="text-left font-semibold">Price</th>
+                    <th class="text-left font-semibold pl-8">Quantity</th>
+                    <th class="text-left font-semibold">Total</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="py-4">
+                      <div class="flex items-center">
+                        <img
+                          class="h-16 w-16 mr-4"
+                          src="../assets/g27cq4-500x500 1.png"
+                          alt="Product image"
+                        />
+                        <span class="font-semibold">Product name</span>
+                      </div>
+                    </td>
+                    <td class="py-4">$19.99</td>
+                    <td class="py-4">
+                      <div class="flex items-center">
+                        <button class="border rounded-md py-2 px-4 mr-2">
+                          -
+                        </button>
+                        <span class="text-center w-8">1</span>
+                        <button class="border rounded-md py-2 px-4 ml-2">
+                          +
+                        </button>
+                      </div>
+                    </td>
+                    <td class="py-4">$19.99</td>
+                  </tr>
+                  <!-- More product rows -->
+                </tbody>
+              </table>
+            </div>
+          </div>
 
-            <div
-              class="flex items-center md:p-8 p-6 bg-[#0C172C] h-full lg:w-11/12 lg:ml-auto"
-            >
-              <form class="max-w-lg w-full mx-auto">
-                <div class="mb-12">
-                  <h3 class="text-3xl font-bold text-yellow">
-                    Create an account
-                  </h3>
-                  <p class="text-white">Enter your details below</p>
-                </div>
+          <div class="flex justify-between items-center">
+            <div class="border border-black w-52">
+              <p class="text-lg text-center text-bold py-3">Return To Shop</p>
+            </div>
+            <div class="border border-black w-52">
+              <p class="text-lg text-center text-bold py-3">Update Cart</p>
+            </div>
+          </div>
 
-                <div>
-                  <label class="text-white text-xs block mb-2">Full Name</label>
-                  <div class="relative flex items-center">
-                    <input
-                      name="name"
-                      type="text"
-                      required
-                      class="w-full bg-transparent text-sm text-white border-b border-gray-300 focus:border-transparent focus:outline-none px-2 py-3 outline-none border-t-0 border-l-0 border-r-0"
-                      placeholder="Enter name"
-                    />
-
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="#bbb"
-                      stroke="#bbb"
-                      class="w-[18px] h-[18px] absolute right-2"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        cx="10"
-                        cy="7"
-                        r="6"
-                        data-original="#000000"
-                      ></circle>
-                      <path
-                        d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z"
-                        data-original="#000000"
-                      ></path>
-                    </svg>
-                  </div>
+          <div class="flex justify-between mt-10">
+            <div class="flex">
+              <input
+                type="text"
+                placeholder="cuppon code"
+                class="w-52 text-base border border-[#FFAD0D] hover:outline-none pl-5 h-14"
+              />
+              <button class="btn-button whitespace-nowrap ml-14 h-14">
+                Apply Coupon
+              </button>
+            </div>
+            <div class="w-[470px] h-[290px] mb-3 border border-black">
+              <div class="rounded-lg p-6">
+                <h2 class="text-lg font-semibold mb-4">Summary</h2>
+                <div class="flex justify-between mb-2">
+                  <span>Subtotal</span>
+                  <span>$19.99</span>
                 </div>
-                <div class="mt-8">
-                  <label class="text-white text-xs block mb-2">Email</label>
-                  <div class="relative flex items-center">
-                    <input
-                      name="email"
-                      type="text"
-                      required
-                      class="w-full bg-transparent text-sm text-white border-b border-gray-300 focus:border-transparent focus:outline-none px-2 py-3 outline-none border-t-0 border-l-0 border-r-0"
-                      placeholder="Enter email"
-                    />
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="#bbb"
-                      stroke="#bbb"
-                      class="w-[18px] h-[18px] absolute right-2"
-                      viewBox="0 0 682.667 682.667"
-                    >
-                      <defs>
-                        <clipPath id="a" clipPathUnits="userSpaceOnUse">
-                          <path
-                            d="M0 512h512V0H0Z"
-                            data-original="#000000"
-                          ></path>
-                        </clipPath>
-                      </defs>
-                      <g
-                        clip-path="url(#a)"
-                        transform="matrix(1.33 0 0 -1.33 0 682.667)"
-                      >
-                        <path
-                          fill="none"
-                          stroke-miterlimit="10"
-                          stroke-width="40"
-                          d="M452 444H60c-22.091 0-40-17.909-40-40v-39.446l212.127-157.782c14.17-10.54 33.576-10.54 47.746 0L492 364.554V404c0 22.091-17.909 40-40 40Z"
-                          data-original="#000000"
-                        ></path>
-                        <path
-                          d="M472 274.9V107.999c0-11.027-8.972-20-20-20H60c-11.028 0-20 8.973-20 20V274.9L0 304.652V107.999c0-33.084 26.916-60 60-60h392c33.084 0 60 26.916 60 60v196.653Z"
-                          data-original="#000000"
-                        ></path>
-                      </g>
-                    </svg>
-                  </div>
+                <div class="flex justify-between mb-2">
+                  <span>Taxes</span>
+                  <span>$1.99</span>
                 </div>
-                <div class="mt-8">
-                  <label class="text-white text-xs block mb-2">Password</label>
-                  <div class="relative flex items-center">
-                    <input
-                      name="password"
-                      type="password"
-                      required
-                      class="w-full bg-transparent text-sm text-white border-b border-gray-300 focus:border-transparent focus:outline-none px-2 py-3 outline-none border-t-0 border-l-0 border-r-0"
-                      placeholder="Enter password"
-                    />
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="#bbb"
-                      stroke="#bbb"
-                      class="w-[18px] h-[18px] absolute right-2 cursor-pointer"
-                      viewBox="0 0 128 128"
-                    >
-                      <path
-                        d="M64 104C22.127 104 1.367 67.496.504 65.943a4 4 0 0 1 0-3.887C1.367 60.504 22.127 24 64 24s62.633 36.504 63.496 38.057a4 4 0 0 1 0 3.887C126.633 67.496 105.873 104 64 104zM8.707 63.994C13.465 71.205 32.146 96 64 96c31.955 0 50.553-24.775 55.293-31.994C114.535 56.795 95.854 32 64 32 32.045 32 13.447 56.775 8.707 63.994zM64 88c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm0-40c-8.822 0-16 7.178-16 16s7.178 16 16 16 16-7.178 16-16-7.178-16-16-16z"
-                        data-original="#000000"
-                      ></path>
-                    </svg>
-                  </div>
+                <div class="flex justify-between mb-2">
+                  <span>Shipping</span>
+                  <span>$0.00</span>
                 </div>
-                <div class="mt-8">
-                  <label class="text-white text-xs block mb-2">Password</label>
-                  <div class="relative flex items-center">
-                    <input
-                      name="confirmpassword"
-                      type="password"
-                      required
-                      class="w-full bg-transparent text-sm text-white border-b border-gray-300 focus:border-transparent focus:outline-none px-2 py-3 outline-none border-t-0 border-l-0 border-r-0"
-                      placeholder="Enter confirm password"
-                    />
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="#bbb"
-                      stroke="#bbb"
-                      class="w-[18px] h-[18px] absolute right-2 cursor-pointer"
-                      viewBox="0 0 128 128"
-                    >
-                      <path
-                        d="M64 104C22.127 104 1.367 67.496.504 65.943a4 4 0 0 1 0-3.887C1.367 60.504 22.127 24 64 24s62.633 36.504 63.496 38.057a4 4 0 0 1 0 3.887C126.633 67.496 105.873 104 64 104zM8.707 63.994C13.465 71.205 32.146 96 64 96c31.955 0 50.553-24.775 55.293-31.994C114.535 56.795 95.854 32 64 32 32.045 32 13.447 56.775 8.707 63.994zM64 88c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm0-40c-8.822 0-16 7.178-16 16s7.178 16 16 16 16-7.178 16-16-7.178-16-16-16z"
-                        data-original="#000000"
-                      ></path>
-                    </svg>
-                  </div>
+                <hr class="my-2" />
+                <div class="flex justify-between mb-2">
+                  <span class="font-semibold">Total</span>
+                  <span class="font-semibold">$21.98</span>
                 </div>
-
-                <div class="flex items-center mt-8">
-                  <input
-                    id="remember-me"
-                    name="remember-me"
-                    type="checkbox"
-                    class="h-4 w-4 shrink-0 rounded"
-                  />
-                  <label
-                    for="remember-me"
-                    class="text-white ml-3 block text-sm"
-                  >
-                    I accept the
-                    <a class="text-yellow font-semibold hover:underline ml-1"
-                      >Terms and Conditions</a
-                    >
-                  </label>
-                </div>
-
-                <div class="mt-12">
-                  <button type="button" class="btn-button w-full">
-                    Register
-                  </button>
-
-                  <div
-                    class="flex items-center justify-center mt-5 bg-white p-4 rounded-md"
-                  >
-                    <img src="../assets//Icon-Google.png" alt="" />
-                    <p class="text-black pl-3">Sign Up With Google</p>
-                  </div>
-                  <p class="text-sm text-white mt-8 text-center">
-                    Already have an account?
-                    <a class="text-yellow font-semibold hover:underline ml-1"
-                      >Login here</a
-                    >
-                  </p>
-                </div>
-              </form>
+                <button
+                  class="btn-button text-white py-2 px-4 rounded-lg mt-4 w-full"
+                >
+                  Checkout
+                </button>
+              </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </main>
-    <footer class="bg-[#343434] text-white mt-10 md:mt-44">
+
+    <footer class="bg-[#343434] text-white mt-10 md:mt-32">
       <div class="container mx-auto p-10">
         <div class="footer relative">
           <nav class="footer-nav">
             <h6 class="footer-title">Exclusive</h6>
             <a class="">Subscribe</a>
-            <a class="">Get 10% off your first order</a>
+            <a class="">Get 10% off your first order ></a>
             <div>
               <p class="pt-3">
                 <input
@@ -576,7 +617,9 @@
           </nav>
         </div>
         <hr class="bg-white opacity-20 my-5" />
-        <p class="opacity-70 text-center p-4">@Copyright 2024. All right</p>
+        <p class="opacity-70 text-center p-4">
+          @Copyright 2024. All right <i class="fa-solid fa-cart-shopping"></i>
+        </p>
       </div>
     </footer>
     <script src="script.js"></script>

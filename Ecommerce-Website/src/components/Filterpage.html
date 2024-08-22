@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <!-- style custom css link -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- tailwind css -->
+    <link href="./output.css" rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome  link -->
+    <link rel="stylesheet" href="../fontLink/css/all.min.css" />
+    <link rel="stylesheet" href="../fontLink/css/fontawesome.min.css" />
+    <!-- daisy link  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- google font link Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- google font link Inter -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- swipper link -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar max-w-screen-xl mx-auto">
+        <div class="navbar-start">
+          <div class="lg:hidden">
+            <button
+              id="drawerButton"
+              role="button"
+              class="flex items-center text-black px-4 py-3 rounded-md hover:bg-gray-200"
+            >
+              <i class="fa-solid fa-bars"></i>
+            </button>
+          </div>
+          <button class="text-xl">
+            <img src="../assets/logo.png" alt="" />
+          </button>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <div
+            class="pt-2 relative mx-auto text-gray-600 hidden lg:flex w-full"
+          >
+            <input
+              class="border-2 w-full border-gray-300 bg-white h-10 px-5 rounded-lg text-sm focus:outline-none"
+              type="search"
+              name="search"
+              placeholder="Search for items..."
+            />
+            <button
+              type="submit"
+              class="absolute right-0 top-[7px] bg-purple-800 px-5 py-2 rounded-e-md"
+            >
+              <i class="fa-solid fa-magnifying-glass text-white"></i>
+            </button>
+          </div>
+        </div>
+        <div class="navbar-end gap-3 mr-3 lg:mr-0">
+          <div
+            class="flex lg:hidden cursor-pointer bg-purple-50 px-[10px] lg:px-3 py-[6px] lg:py-2 rounded-full items-center justify-center"
+          >
+            <i
+              class="fa-solid fa-magnifying-glass text-base lg:text-lg text-purple-500"
+            ></i>
+          </div>
+          <div
+            class="cursor-pointer bg-purple-50 px-[10px] lg:px-[14px] py-[6px] lg:py-2 rounded-full flex items-center justify-center"
+          >
+            <i
+              class="fa-regular fa-heart text-base lg:text-lg text-purple-500"
+            ></i>
+          </div>
+          <div class="relative inline-block">
+            <div
+              class="cursor-pointer bg-purple-50 px-[10px] lg:px-4 py-[6px] lg:py-2 rounded-full flex items-center justify-center"
+              id="dropdownButton"
+            >
+              <i
+                class="fa-regular fa-user text-base lg:text-lg text-purple-500"
+              ></i>
+            </div>
+            <div
+              id="dropdownMenu"
+              class="hidden absolute px-2 py-4 -right-12 text-sm top-12 w-64 bg-white rounded-md shadow-md z-50"
+            >
+              <a
+                href="#"
+                class="flex items-center px-4 py-3 hover:bg-[#ffad33] rounded-md whitespace-nowrap"
+              >
+                <i class="fa-regular fa-user mr-6 text-lg"></i>
+                Manage My Account
+              </a>
+              <a
+                href="#"
+                class="flex items-center px-4 py-3 hover:bg-[#ffad33] rounded-md"
+              >
+                <i class="fa-solid fa-bag-shopping mr-6 text-lg"></i>
+                My Order
+              </a>
+              <a
+                href="#"
+                class="flex items-center px-4 py-3 hover:bg-[#ffad33] rounded-md"
+              >
+                <i class="fa-regular fa-circle-xmark mr-6 text-lg"></i>
+                My Cancellations
+              </a>
+              <a
+                href="#"
+                class="flex items-center px-4 py-3 hover:bg-[#ffad33] rounded-md"
+              >
+                <i class="fa-regular fa-star mr-6 text-lg"></i>
+                My Reviews
+              </a>
+              <a
+                href="#"
+                class="flex items-center px-4 py-3 hover:bg-[#ffad33] rounded-md"
+              >
+                <i
+                  class="fa-solid fa-arrow-right-from-bracket mr-6 text-lg"
+                ></i>
+                Logout
+              </a>
+            </div>
+          </div>
+
+          <div class="relative inline-block group">
+            <!-- Cart Icon and Badge -->
+            <div
+              class="bg-purple-50 px-[10px] lg:px-3 py-[6px] lg:py-2 rounded-full flex items-center justify-center cursor-pointer"
+            >
+              <i
+                class="fa-solid fa-cart-shopping text-base lg:text-lg text-purple-500"
+              ></i>
+              <span
+                class="absolute bg-red-500 text-white text-sm px-[6px] py-[3px] -top-2 -right-1 rounded-full"
+                >0</span
+              >
+            </div>
+
+            <!-- Dropdown Menu -->
+            <div
+              class="dropdown-menu absolute z-50 right-0 lg:-right-14 w-72 h-40 bg-white border border-gray-200 rounded-md shadow-lg overflow-hidden opacity-0 invisible transition-opacity duration-300 ease-in-out"
+            >
+              <div class="p-4 transition-opacity ease-in-out">
+                <p class="text-gray-700">Your cart is empty.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="drawer"
+        class="fixed inset-y-0 left-0 h-full w-64 bg-white shadow-lg drawer drawer-hidden z-40"
+      >
+        <div class="p-4">
+          <button
+            id="closeDrawerButton"
+            class="absolute right-5 bg-gray-500 hover:bg-gray-950 text-white px-2 py-1 rounded cursor-pointer"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <ul class="mt-16">
+            <li class="py-2 px-4 hover:bg-gray-200 rounded-md">
+              <a href="#">Category</a>
+            </li>
+            <li class="py-2 px-4 hover:bg-gray-200 rounded-md">
+              <a href="#">Home</a>
+            </li>
+            <li class="py-2 px-4 hover:bg-gray-200 rounded-md">
+              <a href="#">Brand</a>
+            </li>
+            <li class="py-2 px-4 hover:bg-gray-200 rounded-md">
+              <a href="#">Discount Products</a>
+            </li>
+            <li class="py-2 px-4 hover:bg-gray-200 rounded-md">
+              <a href="#">All Vendors</a>
+            </li>
+            <li class="py-2 px-4 hover:bg-gray-200 rounded-md">
+              <a href="#">Vendor Zone</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <nav class="bg-purple-800 py-[5px] px-[15px] hidden lg:block">
+      <ul
+        class="mt-20 lg:mt-0 flex items-center text-base font-bold text-white gap-10 max-w-screen-xl mx-auto"
+        id="navMenu"
+      >
+        <li
+          class="mt-20 lg:mt-0 flex items-center justify-between px-10 w-56 lg:w-64 bg-white h-12 rounded-md"
+        >
+          <svg
+            width="21"
+            height="21"
+            viewBox="0 0 21 21"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="text-black"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M9.875 12.9195C9.875 12.422 9.6775 11.9452 9.32563 11.5939C8.97438 11.242 8.4975 11.0445 8 11.0445C6.75875 11.0445 4.86625 11.0445 3.625 11.0445C3.1275 11.0445 2.65062 11.242 2.29937 11.5939C1.9475 11.9452 1.75 12.422 1.75 12.9195V17.2945C1.75 17.792 1.9475 18.2689 2.29937 18.6202C2.65062 18.972 3.1275 19.1695 3.625 19.1695H8C8.4975 19.1695 8.97438 18.972 9.32563 18.6202C9.6775 18.2689 9.875 17.792 9.875 17.2945V12.9195ZM19.25 12.9195C19.25 12.422 19.0525 11.9452 18.7006 11.5939C18.3494 11.242 17.8725 11.0445 17.375 11.0445C16.1337 11.0445 14.2413 11.0445 13 11.0445C12.5025 11.0445 12.0256 11.242 11.6744 11.5939C11.3225 11.9452 11.125 12.422 11.125 12.9195V17.2945C11.125 17.792 11.3225 18.2689 11.6744 18.6202C12.0256 18.972 12.5025 19.1695 13 19.1695H17.375C17.8725 19.1695 18.3494 18.972 18.7006 18.6202C19.0525 18.2689 19.25 17.792 19.25 17.2945V12.9195ZM16.5131 9.66516L19.1206 7.05766C19.8525 6.32578 19.8525 5.13828 19.1206 4.4064L16.5131 1.79891C15.7813 1.06703 14.5937 1.06703 13.8619 1.79891L11.2544 4.4064C10.5225 5.13828 10.5225 6.32578 11.2544 7.05766L13.8619 9.66516C14.5937 10.397 15.7813 10.397 16.5131 9.66516ZM9.875 3.54453C9.875 3.04703 9.6775 2.57015 9.32563 2.2189C8.97438 1.86703 8.4975 1.66953 8 1.66953C6.75875 1.66953 4.86625 1.66953 3.625 1.66953C3.1275 1.66953 2.65062 1.86703 2.29937 2.2189C1.9475 2.57015 1.75 3.04703 1.75 3.54453V7.91953C1.75 8.41703 1.9475 8.89391 2.29937 9.24516C2.65062 9.59703 3.1275 9.79453 3.625 9.79453H8C8.4975 9.79453 8.97438 9.59703 9.32563 9.24516C9.6775 8.89391 9.875 8.41703 9.875 7.91953V3.54453Z"
+              fill="currentColor"
+            ></path>
+          </svg>
+          <span class="text-lg font-bold text-black">Category</span>
+          <i class="fa-solid fa-angle-down text-black"></i>
+        </li>
+        <div class="relative group">
+          <a href="#" class="block px-4 py-2 hover:bg-gray-200">Home</a>
+          <ul
+            class="absolute hidden text-gray-700 pt-1 group-hover:block z-50 w-52 transition-all ease-in-out"
+          >
+            <li class="">
+              <a
+                class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                href="#"
+                >Submenu 1</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                href="#"
+                >Submenu 2</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="bg-gray-200 hover:bg-gray-400 py-2 px-4 block whitespace-no-wrap"
+                href="#"
+                >Submenu 3</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <li><a href="">Brand</a></li>
+        <li><a href="">Discount Products</a></li>
+        <li><a href="">All Vendors</a></li>
+        <li><a href="">Vendor Zone</a></li>
+      </ul>
+    </nav>
+
+    <!-- main section  start-->
+    <main class="container mx-auto p-4">
+      <div class="drawer lg:drawer-open">
+        <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
+
+        <div class="drawer-content">
+          <!-- Page content here -->
+          <div
+            class="grid grid-cols-1 lg:grid-cols-2 justify-between text-2xl font-bold bg-[#f7f7f7] p-4 lg:ml-10"
+          >
+            <div class="flex items-center gap-4">
+              <h1 class="text-[#2d2d2d] font-normal text-lg pl-12 lg:pl-2">
+                View All Products
+              </h1>
+              <i
+                id="icon-grid"
+                class="fa-solid fa-braille text-lg border border-[#ebebeb] p-2 cursor-pointer hover:bg-white"
+              ></i>
+              <i
+                id="icon-list"
+                class="fa-solid fa-list-ul text-lg border border-[#ebebeb] px-3 py-2 cursor-pointer hover:bg-white"
+              ></i>
+            </div>
+            <div>
+              <div class="flex items-center mt-5 lg:mt-0 lg:justify-end">
+                <label
+                  for="featured"
+                  class="text-[#2d2d2d] font-normal text-lg mr-5 whitespace-nowrap"
+                  >SORT BY</label
+                >
+                <select
+                  id="featured"
+                  class="relative h-12 w-60 border border-gray-300 text-[#2d2d2d] font-normal text-lg rounded-lg block py-2.5 pl-3 pr-10 focus:outline-none custom-select space-y-10"
+                >
+                  <i class="fa-solid fa-angle-down absolute right-3 z-10"></i>
+                  <option selected>Featured</option>
+                  <option value="">Price, low to high</option>
+                  <option value="">Price, high to low</option>
+                  <option value="">Price, low to high</option>
+                  <option value="">Price, high to low</option>
+                  <option value="">Price, low to high</option>
+                  <option value="">Price, high to low</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grid View Section -->
+          <div
+            id="grid-view"
+            class="pt-8 pb-5 grid grid-cols-2 lg:grid-cols-4 lg:gap-10 gap-2 lg:ml-10"
+          >
+            <div
+              class="w-full lg:w-[200px] h-full lg:h-[320px] bg-white overflow-hidden rounded-md relative group"
+            >
+              <div
+                class="relative m-3 rounded-md overflow-hidden group-hover:bg-[rgba(14,66,136,0.3)] transition-colors duration-300 cursor-pointer"
+              >
+                <img
+                  src="https://media.e-valy.com/cms/products/images/93ca9538-f187-4a89-b7c3-bf93cd43d685?h=250&w=250"
+                  alt=""
+                  class="w-full group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+              <span
+                class="absolute top-0 left-0 m-3 rounded-lg bg-purple-600 px-4 py-1 text-center text-sm font-medium text-white"
+                >39%</span
+              >
+              <span
+                class="absolute top-[25%] right-[50%] transform translate-x-1/2 group-hover:opacity-100 opacity-0 transition-opacity duration-300 bg-white px-2 py-1 rounded-full cursor-pointer"
+              >
+                <i class="fa-regular fa-eye text-black"></i>
+              </span>
+
+              <div class="px-4 pt-2 text-center pb-5">
+                <h1
+                  class="text-base font-medium text-gray-900 overflow-hidden whitespace-nowrap text-ellipsis hover:text-red-500 cursor-pointer"
+                >
+                  Silicone Strap Analogue Sports Watch Rectangular Dial New
+                  Model 2023 Men Watches
+                </h1>
+                <div class="flex items-center mt-2 justify-center">
+                  <span class="text-lg font-semibold text-gray-900">$250</span>
+                  <span
+                    class="text-sm font-medium text-gray-500 line-through ml-4"
+                    >$350</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- List View Section -->
+          <div
+            id="list-view"
+            class="pt-8 pb-5 grid grid-cols-1 gap-10 lg:ml-10 mt-10 hidden"
+          >
+            <div
+              class="grid grid-cols-2 gap-2 w-full lg:w-[305px] h-full lg:h-[160px] items-center justify-between bg-white overflow-hidden rounded-md group shadow-md"
+            >
+              <div
+                class="m-3 rounded-md overflow-hidden group-hover:bg-[rgba(14,66,136,0.3)] transition-colors duration-300 cursor-pointer"
+              >
+                <img
+                  src="https://media.e-valy.com/cms/products/images/93ca9538-f187-4a89-b7c3-bf93cd43d685?h=250&w=250"
+                  alt=""
+                  class="relative w-full group-hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+
+              <span
+                class="absolute top-0 left-0 m-3 rounded-lg bg-purple-600 px-4 py-1 text-center text-sm font-medium text-white"
+                >39%</span
+              >
+              <span
+                class="absolute top-16 right-[75%] transform translate-x-1/2 group-hover:opacity-100 opacity-0 transition-opacity duration-300 bg-white px-2 py-1 rounded-full cursor-pointer"
+              >
+                <i class="fa-regular fa-eye text-black"></i>
+              </span>
+              <div class="mr-5">
+                <h1
+                  class="text-gray-900 h-10 overflow-hidden text-sm text-ellipsis hover:text-red-500 cursor-pointer"
+                >
+                  Silicone Strap Analogue Sports Watch Rectangular Dial New
+                  Model 2023 Men Watches
+                </h1>
+
+                <div class="flex items-center justify-center space-x-1 mt-2">
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                  <i class="fa-solid fa-star text-yellow-400 text-xs"></i>
+                  <span
+                    class="mr-2 ml-5 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold"
+                    >5.0</span
+                  >
+                </div>
+
+                <div class="flex items-center mt-2 justify-center">
+                  <span class="text-lg font-semibold text-gray-900">$250</span>
+                  <span
+                    class="text-sm font-medium text-gray-500 line-through ml-4"
+                    >$350</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <label
+            for="my-drawer-2"
+            class="drawer-button lg:hidden absolute top-4 left-4"
+          >
+            <i class="fa-solid fa-bars lg:text-2xl text-lg"></i>
+          </label>
+        </div>
+        <div class="drawer-side">
+          <label
+            for="my-drawer-2 overflow-y-auto"
+            aria-label="close sidebar"
+            class="drawer-overlay"
+          ></label>
+          <div class="menu bg-base-200 text-base-content min-h-full w-64 p-4">
+            <!-- brands -->
+            <div class="">
+              <div class="flex items-center border-b border-gray-200 pb-2">
+                <i class="fa-solid fa-angle-down mr-3 text-2xl"></i>
+                <h1
+                  class="text-base font-semibold tracking-wide uppercase leading-6 text-black"
+                >
+                  BRANDS
+                </h1>
+              </div>
+
+              <div class="flex flex-col mt-5 space-y-4 scroll-container">
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata 3D
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Hush Puppies
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+              </div>
+            </div>
+            <!-- colors -->
+            <div class="mt-8">
+              <div class="flex items-center border-b border-gray-200 pb-2">
+                <i class="fa-solid fa-angle-down mr-3 text-2xl"></i>
+                <h1
+                  class="text-base font-semibold tracking-wide uppercase leading-6 text-black"
+                >
+                  colors
+                </h1>
+              </div>
+
+              <div class="flex flex-col mt-5 space-y-4 scroll-container">
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <div class="w-5 h-5 rounded-full bg-white shadow mr-6"></div>
+                  White
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <div
+                    class="w-5 h-5 rounded-full bg-blue-600 shadow mr-6"
+                  ></div>
+                  Blue
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <div
+                    class="w-5 h-5 rounded-full bg-red-600 shadow mr-6"
+                  ></div>
+                  Red
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <div
+                    class="w-5 h-5 rounded-full bg-indigo-600 shadow mr-6"
+                  ></div>
+                  Indigo
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <div class="w-5 h-5 rounded-full bg-black shadow mr-6"></div>
+                  Black
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <div
+                    class="w-5 h-5 rounded-full bg-purple-600 shadow mr-6"
+                  ></div>
+                  Purple
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <div
+                    class="w-5 h-5 rounded-full bg-gray-600 shadow mr-6"
+                  ></div>
+                  Gray
+                </label>
+              </div>
+            </div>
+            <!-- price -->
+            <div class="mt-8">
+              <div class="flex items-center border-b border-gray-200 pb-2">
+                <i class="fa-solid fa-angle-down mr-3 text-2xl"></i>
+                <h1
+                  class="text-base font-semibold tracking-wide uppercase leading-6 text-black"
+                >
+                  Price
+                </h1>
+              </div>
+
+              <div class="flex flex-col mt-5 space-y-4 scroll-container">
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata 3D
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Hush Puppies
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+              </div>
+            </div>
+            <!-- size -->
+            <div class="mt-8">
+              <div class="flex items-center border-b border-gray-200 pb-2">
+                <i class="fa-solid fa-angle-down mr-3 text-2xl"></i>
+                <h1
+                  class="text-base font-semibold tracking-wide uppercase leading-6 text-black"
+                >
+                  Size
+                </h1>
+              </div>
+
+              <div class="flex flex-col mt-5 space-y-4 scroll-container">
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata 3D
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Hush Puppies
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+                <label
+                  class="text-base font-normal leading-5 text-gray-800 flex items-center"
+                >
+                  <input
+                    class="mr-6 w-4 h-4 border border-gray-300"
+                    type="checkbox"
+                    unchecked
+                  />Bata
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- main section  end-->
+    <footer class="bg-[#343434] text-white mt-10 md:mt-32">
+      <div class="container mx-auto p-10">
+        <div class="footer">
+          <nav class="footer-nav">
+            <h6 class="footer-title">Exclusive</h6>
+            <a class="">Subscribe</a>
+            <a class="">Get 10% off your first order</a>
+            <div class="relative">
+              <p class="pt-3">
+                <input
+                  type="email"
+                  name=""
+                  id=""
+                  placeholder="Enter your email"
+                  class="w-[217px] md:w-44 lg:w-[217px] lg:h-[48px] h-full bg-[#343434] px-4 py-3 gap-8 rounded border border-[#fafafa] outline-none text-white"
+                />
+              </p>
+              <img
+                src="../assets//Vector.png"
+                alt=""
+                class="z-50 absolute top-6 right-2 md:left-36 lg:left-44 lg:bottom-8"
+              />
+            </div>
+          </nav>
+          <nav class="footer-nav">
+            <h6 class="footer-title">Support</h6>
+            <a class="">Dhaka, DH 1515, Bangladesh.</a>
+            <a class="">gausulislam5@gmail.com</a>
+            <a class="">+8801785003901</a>
+          </nav>
+          <nav class="footer-nav">
+            <h6 class="footer-title">Account</h6>
+            <a class="">My Account</a>
+            <a class="">Login/Register</a>
+            <a class="">Cart Shop</a>
+          </nav>
+          <nav class="footer-nav">
+            <h6 class="footer-title">Quick Link</h6>
+            <a class="">Privacy Policy</a>
+            <a class="">Terms Of Use</a>
+            <a class="">FAQs</a>
+            <a class="">Contact</a>
+          </nav>
+          <nav>
+            <h6 class="footer-title">Download App</h6>
+            <a href="" class="opacity-40 text-sm">App new user Only</a>
+            <div class="flex justify-center items-center">
+              <img
+                src="../assets/Qrcode 1.png"
+                alt=""
+                class="w-20 md:w-14 lg:w-20"
+              />
+              <img
+                src="../assets/Frame 718.png"
+                alt=""
+                class="w-20 md:w-14 lg:w-20"
+              />
+            </div>
+            <div class="flex justify-between items-center pt-5 cursor-pointer">
+              <img src="../assets/Icon-Facebook.png" alt="" />
+              <img
+                src="../assets/icon-instagram.png"
+                alt=""
+                class="pl-5 md:pl-2"
+              />
+              <img
+                src="../assets/Icon-Linkedin.png"
+                alt=""
+                class="pl-5 md:pl-2"
+              />
+              <img
+                src="../assets/Icon-Twitter.png"
+                alt=""
+                class="pl-5 md:pl-2"
+              />
+            </div>
+          </nav>
+        </div>
+        <hr class="bg-white opacity-20 my-5" />
+        <p class="opacity-70 text-center p-4">
+          @Copyright 2024. All right <i class="fa-solid fa-cart-shopping"></i>
+        </p>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

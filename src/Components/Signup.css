@@ -1,0 +1,5 @@
+.checkbox {
+  --chkbg: rgb(101, 5, 101) !important;
+  border-width: 0px !important;
+  border-color: none !important;
+}

@@ -4,12 +4,25 @@ import { IoSearch } from "react-icons/io5";
 import { CiHeart, CiUser } from "react-icons/ci";
 import { FiShoppingCart } from "react-icons/fi";
 import { FaXmark } from "react-icons/fa6";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
+  };
+  const navigate = useNavigate();
+
+  const handleSignupClick = () => {
+    navigate("/signup");
+  };
+  const handleSigninClick = () => {
+    navigate("/signin");
+  };
+
+  const handleLogoClick = () => {
+    navigate("/");
   };
 
   return (
@@ -25,7 +38,7 @@ const Header = () => {
               <FiMenu />
             </button>
           </div>
-          <button className="text-xl">
+          <button onClick={handleLogoClick} className="text-xl">
             <img
               src="https://6valley.6amtech.com/storage/app/public/company/2023-06-13-648845d83c293.png"
               alt="Company Logo"
@@ -43,7 +56,7 @@ const Header = () => {
             />
             <button
               type="submit"
-              className="absolute right-0 bg-purple-800 h-12 w-14 rounded-e-md"
+              className="absolute right-0 bg-purple-600 h-12 w-14 rounded-e-md"
             >
               <IoSearch className="text-white text-2xl ml-4" />
             </button>
@@ -59,11 +72,17 @@ const Header = () => {
             </div>
             <div className="absolute right-0 mt-1 z-10 hidden group-hover:block bg-white shadow-lg rounded-lg w-48 border border-gray-200 duration-700 transition-all ease-in-out">
               <ul className="p-2 max-h-auto overflow-y-auto duration-700 transition-all ease-in-out space-y-2">
-                <li className="flex items-center space-x-2 border-b border-gray-200 py-2 bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer pl-2">
-                  Profile
+                <li
+                  onClick={handleSigninClick}
+                  className="flex items-center space-x-2 border-b border-gray-200 py-2 bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer pl-2"
+                >
+                  Signin
                 </li>
-                <li className="flex items-center space-x-2 border-b border-gray-200 py-2 bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer pl-2">
-                  Login
+                <li
+                  onClick={handleSignupClick}
+                  className="flex items-center space-x-2 border-b border-gray-200 py-2 bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer pl-2"
+                >
+                  Signup
                 </li>
                 <li className="flex items-center space-x-2 border-b border-gray-200 py-2 bg-gray-50 hover:bg-gray-100 rounded-md cursor-pointer pl-2">
                   LogOut

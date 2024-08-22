@@ -1,8 +1,9 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Layout from './Layout/Layout';
-import Home from './Components/Home';
-
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Layout from "./Layout/Layout";
+import Home from "./Components/Home";
+import Signup from "./Components/Signup";
+import Signin from "./Components/Signin";
 
 function App() {
   return (
@@ -10,7 +11,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          {/* Add more nested routes here */}
+          <Route path="signup" element={<Signup />} />
+          <Route path="signin" element={<Signin />} />
         </Route>
       </Routes>
     </Router>
