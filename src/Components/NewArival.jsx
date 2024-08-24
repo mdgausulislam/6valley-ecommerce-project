@@ -7,7 +7,7 @@ import { FaAngleRight } from "react-icons/fa";
 
 function NewArival() {
   return (
-    <div className="max-w-screen-xl mx-auto mt-20">
+    <div className="max-w-screen-xl lg:mx-auto mt-10 mx-2">
       <div className="flex items-center justify-between px-2 pt-5">
         <div>
           <h1 className="text-2xl uppercase font-bold text-purple-600">

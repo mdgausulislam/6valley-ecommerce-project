@@ -7,6 +7,7 @@ import FeaturedDeal from "./FeaturedDeal";
 import TopSellers from "./TopSellers";
 import LatestProducts from "./LatestProducts";
 import NewArival from "./NewArival";
+import BannerPart from "./BannerPart";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <CategoriesProduct />
       <FeaturedDeal />
       <TopSellers />
+      <BannerPart />
       <LatestProducts />
       <NewArival />
     </div>

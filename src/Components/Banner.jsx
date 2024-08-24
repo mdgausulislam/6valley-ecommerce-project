@@ -13,8 +13,8 @@ import "./Banner.css";
 import { Pagination, Navigation } from "swiper/modules";
 function Banner() {
   return (
-    <div className="max-w-screen-xl mx-auto flex h-80">
-      <div className="w-72 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
+    <div className="max-w-screen-xl mx-auto flex mt-3">
+      <div className="w-72 hidden lg:block shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
         <ul className="space-y-3 px-3 mt-3">
           <li className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer">
             Men's fashion
@@ -39,7 +39,7 @@ function Banner() {
           </li>
         </ul>
       </div>
-      <div className="ml-3 w-[76.5%]">
+      <div className="ml-0 lg:ml-3 w-full lg:w-[76.5%]">
         <Swiper
           slidesPerView={1}
           spaceBetween={30}

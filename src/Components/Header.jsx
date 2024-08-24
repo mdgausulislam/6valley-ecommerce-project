@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <header>
-      <div className="navbar max-w-screen-xl mx-auto bg-base-200 grid grid-cols-3 items-center">
+      <div className="navbar max-w-screen-xl mx-auto bg-purple-100 grid grid-cols-3 items-center">
         <div className="flex justify-start">
           <div className="lg:hidden">
             <button

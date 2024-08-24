@@ -1,7 +1,7 @@
-.swiper {
+/* .swiper {
   width: 100%;
   height: 100%;
-}
+} */
 
 .swiper-slide {
   text-align: center;
@@ -12,12 +12,12 @@
   align-items: center;
 }
 
-.swiper-slide img {
+/* .swiper-slide img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
+} */
 
 .swiper-button-next,
 .swiper-button-prev {
@@ -46,3 +46,16 @@
   border-radius: 3px !important;
 }
 
+/* Add this CSS to your global styles */
+.zoom-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.zoom-image {
+  transition: transform 0.5s ease;
+}
+
+.zoom-container:hover .zoom-image {
+  transform: scale(1.5); /* Adjust scale factor as needed */
+}

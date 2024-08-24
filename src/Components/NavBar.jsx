@@ -19,7 +19,7 @@ function Navbar() {
   document.addEventListener("click", closeDropdown);
 
   return (
-    <nav className="bg-purple-600">
+    <nav className="bg-purple-600 hidden lg:block">
       <ul className="max-w-screen-xl mx-auto flex items-center justify-between text-base text-white h-16">
         <li
           className="dropdown relative w-72 bg-white text-black h-10 cursor-pointer flex items-center justify-center"
@@ -31,11 +31,11 @@ function Navbar() {
             <FaAngleDown className="ml-10" />
           </a>
           {isDropdownOpen && (
-            <ul className="absolute z-10 top-[52px] left-0 w-72 bg-white text-black shadow-md rounded-md h-80">
+            <ul className="absolute z-10 top-[52px] left-0 w-72 bg-white text-black shadow-md rounded-md h-[352px]">
               <li className="px-3 py-1 hover:bg-base-300 flex items-center justify-between mx-2 rounded-md my-2 relative group">
                 Men's fashion
                 <FaAngleLeft />
-                <ul className="invisible absolute z-50 flex w-full flex-col bg-white py-1 px-4 text-gray-800 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] group-hover:visible left-72 -top-[7px] h-80 mt-[3px]duration-700 transition-all ease-in-out">
+                <ul className="invisible absolute z-50 flex w-full flex-col bg-white py-1 px-4 text-gray-800 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] group-hover:visible left-72 -top-[7px] h-[352px] mt-[3px]duration-700 transition-all ease-in-out">
                   <li className="px-3 py-1 hover:bg-base-300 rounded-md">
                     Menu Item 1
                   </li>
