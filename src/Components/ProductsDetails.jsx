@@ -232,9 +232,9 @@ function ProductsDetails() {
               <Tab label="Overview" value="3" />
             </TabList>
           </Box>
-          <TabPanel value="1">Item One</TabPanel>
-          <TabPanel value="2">Item Two</TabPanel>
-          <TabPanel value="3">Item Three</TabPanel>
+          <TabPanel value="1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quam incidunt totam quas mollitia vitae vel assumenda atque, quibusdam excepturi vero fugiat amet. Adipisci quidem animi libero voluptates sed esse expedita enim voluptatum doloribus sequi corrupti inventore minima aperiam, dolorem, unde laboriosam ducimus natus dolorum. Modi officia nisi ducimus aspernatur?</TabPanel>
+          <TabPanel value="2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere at obcaecati rerum esse sit rem ut harum assumenda amet dolorem?</TabPanel>
+          <TabPanel value="3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora mollitia aliquid non dignissimos, consectetur voluptatum in numquam officiis voluptas velit, a consequatur. Commodi provident quam consequuntur repudiandae tenetur sit suscipit!</TabPanel>
         </TabContext>
       </Box>
     </div>

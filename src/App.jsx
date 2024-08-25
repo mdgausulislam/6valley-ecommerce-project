@@ -6,6 +6,7 @@ import Signup from "./Components/Signup";
 import Signin from "./Components/Signin";
 import ProductsDetails from "./Components/ProductsDetails";
 import FilterProduct from "./Components/FilterProduct";
+import "./App.css"
 
 function App() {
   return (

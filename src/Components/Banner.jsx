@@ -11,30 +11,53 @@ import "./Banner.css";
 
 // import required modules
 import { Pagination, Navigation } from "swiper/modules";
+import { useNavigate } from "react-router-dom";
 function Banner() {
+  const navigate = useNavigate();
   return (
     <div className="max-w-screen-xl mx-auto flex mt-3">
       <div className="w-72 hidden lg:block shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]">
         <ul className="space-y-3 px-3 mt-3">
-          <li className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer">
+          <li
+            onClick={() => navigate("/filter-product")}
+            className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer"
+          >
             Men's fashion
           </li>
-          <li className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer">
+          <li
+            onClick={() => navigate("/filter-product")}
+            className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer"
+          >
             Home Improvement & Tools
           </li>
-          <li className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer">
+          <li
+            onClick={() => navigate("/filter-product")}
+            className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer"
+          >
             Outdoor Fun & Sports
           </li>
-          <li className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer">
+          <li
+            onClick={() => navigate("/filter-product")}
+            className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer"
+          >
             Women's fashion
           </li>
-          <li className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer">
+          <li
+            onClick={() => navigate("/filter-product")}
+            className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer"
+          >
             ebook
           </li>
-          <li className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer">
+          <li
+            onClick={() => navigate("/filter-product")}
+            className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer"
+          >
             Jewelry & Watches
           </li>
-          <li className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer">
+          <li
+            onClick={() => navigate("/filter-product")}
+            className="hover:bg-base-300 px-3 py-1 rounded-md cursor-pointer"
+          >
             Toys , Kids & Babies
           </li>
         </ul>

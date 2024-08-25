@@ -5,7 +5,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="bg-purple-600 text-white mt-10 md:mt-32">
+    <footer className="bg-purple-600 text-white mt-10 md:mt-32 z-10">
       <div className="container mx-auto p-10">
         <div className="footer grid grid-cols-1 lg:grid-cols-5 justify-between">
           <nav>
@@ -57,9 +57,9 @@ function Footer() {
                 <input
                   type="email"
                   placeholder="Enter your email"
-                  className="w-[300px] h-[52px]  bg-purple-600 px-4 py-3 gap-8 rounded border border-[#fafafa] outline-none text-white"
+                  className="w-[300px] h-[52px]  bg-purple-600 px-4 py-3 gap-8 rounded border border-[#fafafa] outline-none text-white z-10"
                 />
-                <button className="absolute -right-2 p-4 bg-white text-black rounded-lg font-bold">
+                <button className="absolute -right-2 z-10 p-4 bg-white text-black rounded-lg font-bold">
                   Subscribe
                 </button>
               </p>
